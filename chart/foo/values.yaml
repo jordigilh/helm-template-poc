@@ -1,0 +1,5 @@
+baseImage:
+  name: fedora
+  tag: 41
+
+message: Hello World!
