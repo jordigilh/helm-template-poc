@@ -18,8 +18,8 @@ const (
 )
 
 var (
-	chartFullPath       = filepath.Join("chart", "foo")
-	konveyorPartialPath = filepath.Join("files", konveyorDirectoryName)
+	chartFullPath        = filepath.Join("chart", "foo")
+	konveyorRelativePath = filepath.Join("files", konveyorDirectoryName)
 )
 
 func main() {
@@ -55,7 +55,7 @@ func main() {
 	}
 	fmt.Printf("templates rendered in templates directory: %d\n", len(rendered))
 	c2 := *c
-	c2.Templates = filterTemplatesByPath(konveyorPartialPath, c2.Files)
+	c2.Templates = filterTemplatesByPath(konveyorRelativePath, c2.Files)
 	rendered, err = e.Render(&c2, valuesToRender)
 	if err != nil {
 		log.Fatalf("Failed to render templates for chart %s:%s", c.Name(), err)
