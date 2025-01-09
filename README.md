@@ -16,3 +16,10 @@ FROM fedora:41
 
 RUN echo Hello World!
 ```
+
+# Build
+To build the code, run the following command:
+```
+go build
+```
+This will generate a binary named `helm-template-poc`. The binary does not take any argument and has hardcoded the chart in `chart/foo`.
